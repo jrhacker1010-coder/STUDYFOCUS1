@@ -1,137 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Playlist - Focus & Learn</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Playlist App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                Study Playlist
-            </h1>
-        </div>
-    </header>
+  <header>
+    <h1 id="quote">"Stay focused, keep learning!"</h1>
+  </header>
 
-    <main class="main">
-        <div class="container">
-            <!-- Motivational Quotes Section -->
-            <section class="quotes-section">
-                <div class="quote-container">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p id="quote-text" class="quote-text">The expert in anything was once a beginner.</p>
-                    <p id="quote-author" class="quote-author">- Helen Hayes</p>
-                    <button id="new-quote-btn" class="quote-btn">
-                        <i class="fas fa-sync-alt"></i> New Quote
-                    </button>
-                </div>
-            </section>
-
-            <!-- Add Subject Section -->
-            <section class="add-subject-section">
-                <div class="add-subject-container">
-                    <h2 class="section-title">My Study Subjects</h2>
-                    <button id="add-subject-btn" class="add-btn">
-                        <i class="fas fa-plus-circle"></i>
-                        Add New Subject
-                    </button>
-                </div>
-            </section>
-
-            <!-- Subjects Container -->
-            <section id="subjects-container" class="subjects-container">
-                <!-- Subjects will be dynamically added here -->
-            </section>
-        </div>
-    </main>
-
-    <!-- Modals -->
-    <!-- Add Subject Modal -->
-    <div id="subject-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Add New Subject</h3>
-            <form id="subject-form">
-                <div class="form-group">
-                    <label for="subject-name">Subject Name</label>
-                    <input type="text" id="subject-name" required placeholder="e.g., Operating System">
-                </div>
-                <div class="form-group">
-                    <label for="subject-icon">Choose Icon</label>
-                    <div class="icon-selector">
-                        <button type="button" class="icon-btn" data-icon="fa-laptop-code">
-                            <i class="fas fa-laptop-code"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-database">
-                            <i class="fas fa-database"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-network-wired">
-                            <i class="fas fa-network-wired"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-brain">
-                            <i class="fas fa-brain"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-calculator">
-                            <i class="fas fa-calculator"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-flask">
-                            <i class="fas fa-flask"></i>
-                        </button>
-                    </div>
-                </div>
-                <button type="submit" class="submit-btn">Add Subject</button>
-            </form>
-        </div>
+  <main>
+    <div id="subjects">
+      <!-- Example subject -->
+      <div class="subject">
+        <h2>Operating System</h2>
+        <button class="add-topic">➕ Add Topic</button>
+        <ul class="topics"></ul>
+      </div>
     </div>
+    <button id="add-subject">➕ Add Subject</button>
+  </main>
 
-    <!-- Add Topic Modal -->
-    <div id="topic-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Add New Topic</h3>
-            <form id="topic-form">
-                <div class="form-group">
-                    <label for="topic-name">Topic Name</label>
-                    <input type="text" id="topic-name" required placeholder="e.g., Process Management">
-                </div>
-                <div class="form-group">
-                    <label for="youtube-url">YouTube Video URL</label>
-                    <input type="url" id="youtube-url" required placeholder="https://www.youtube.com/watch?v=...">
-                </div>
-                <div class="form-group">
-                    <label for="topic-icon">Choose Icon</label>
-                    <div class="icon-selector">
-                        <button type="button" class="icon-btn" data-icon="fa-play-circle">
-                            <i class="fas fa-play-circle"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-video">
-                            <i class="fas fa-video"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-book">
-                            <i class="fas fa-book"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-file-alt">
-                            <i class="fas fa-file-alt"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-lightbulb">
-                            <i class="fas fa-lightbulb"></i>
-                        </button>
-                        <button type="button" class="icon-btn" data-icon="fa-chart-line">
-                            <i class="fas fa-chart-line"></i>
-                        </button>
-                    </div>
-                </div>
-                <input type="hidden" id="subject-id">
-                <button type="submit" class="submit-btn">Add Topic</button>
-            </form>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
